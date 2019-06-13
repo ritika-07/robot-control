@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingBottom="16dp"
+android:paddingLeft="16dp"
+android:paddingRight="16dp"
+android:paddingTop="16dp"
+    android:background="@android:color/holo_blue_light"
+tools:context="com.example.robot_control.MainActivity">
+
+    <LinearLayout
+        android:layout_width="375dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Robot Controller"
+            android:textAllCaps="true"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:fontFamily="sans-serif" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/forward_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="201dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_toStartOf="@+id/forward_right_btn"
+        android:layout_toLeftOf="@+id/forward_right_btn"
+        android:background="@android:color/background_light"
+        android:text="FORWARD" />
+
+    <Button
+        android:id="@+id/forward_left_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_below="@+id/forward_btn"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_toStartOf="@+id/forward_btn"
+        android:layout_toLeftOf="@+id/forward_btn"
+        android:background="@android:color/background_light"
+        android:text="TURN LEFT" />
+
+    <Button
+        android:id="@+id/forward_right_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_above="@+id/reverse_btn"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/reverse_btn"
+        android:layout_toRightOf="@+id/reverse_btn"
+        android:background="@android:color/background_light"
+        android:text="TURN RIGHT" />
+
+    <Button
+        android:id="@+id/reverse_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_below="@+id/forward_left_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:background="@android:color/background_light"
+        android:text="REVERSE" />
+
+    <Button
+        android:id="@+id/bluetooth_connect_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:background="@android:color/background_light"
+        android:text="Connect to Bluetooth Device" />
+
+</RelativeLayout>
