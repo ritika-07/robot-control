@@ -39,3 +39,75 @@ public class MainActivity extends AppCompatActivity {
         forward_right_btn = (Button) findViewById(R.id.forward_right_btn);
         reverse_btn = (Button) findViewById(R.id.reverse_btn);
         bluetooth_connect_btn = (Button) findViewById(R.id.bluetooth_connect_btn);
+        
+        //OnTouchListener code for the forward button (button long press)
+        forward_btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) //MotionEvent.ACTION_DOWN is when you hold a button down
+                {
+                    command = "1";
+
+                    try
+                    {
+                        outputStream.write(command.getBytes()); //transmits the value of command to the bluetooth module
+                    }
+                    catch (IOException e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+                else if(event.getAction() == MotionEvent.ACTION_UP) //MotionEvent.ACTION_UP is when you release a button
+                {
+                    command = "10";
+                    try
+                    {
+                        outputStream.write(command.getBytes());
+                    }
+                    catch(IOException e)
+                    {
+                        e.printStackTrace();
+                    }
+
+                }
+
+                return false;
+            }
+
+        });
+
+        //OnTouchListener code for the reverse button (button long press)
+        reverse_btn.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent event)
+            {
+                if(event.getAction() == MotionEvent.ACTION_DOWN)
+                {
+                    command = "2";
+
+                    try
+                    {
+                        outputStream.write(command.getBytes());
+                    }
+                    catch (IOException e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+                else if(event.getAction() == MotionEvent.ACTION_UP)
+                {
+                    command = "10";
+                    try
+                    {
+                        outputStream.write(command.getBytes());
+                    }
+                    catch(IOException e)
+                    {
+
+                    }
+
+                }
+                return false;
+            }
+        });
